@@ -1,6 +1,6 @@
 {
   "name": "n8n-nodes-whatsapp-crm-marketing",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "n8n integration node for WhatsApp CRM, Marketing, Cart Recovery by OnlineLiveSupport.com",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",

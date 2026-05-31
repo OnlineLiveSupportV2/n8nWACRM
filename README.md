@@ -15,7 +15,7 @@ With this node, you can automate customer notifications, recover abandoned Shopi
 * **Send Raw WhatsApp Messages**: Dispatch standard custom WhatsApp API payloads (`POST /api/v1/send-message`).
 * **Send Marketing Templates**: Trigger predefined WhatsApp templates with support for dynamic parameter variables and media URIs (`POST /api/v1/send_templet`).
 * **API Logging Support**: Built-in toggle to record execution logs inside your WA CRM panel.
-* **Multi-Environment Ready**: Connect seamlessly to a local development instance (`http://localhost:8002`) or your public production domain.
+* **Production Ready**: Connects directly to the global cloud platform: `https://crm.onlinelivesupport.com`.
 
 ---
 
@@ -34,14 +34,22 @@ To install this node inside your self-hosted or cloud n8n instance:
 
 ---
 
-## 🔑 Configuration & Credentials
+## 🔑 Configuration & Connection Guide
 
-The integration requires a **WhatsApp CRM API** credential set:
+Connecting your **OnlineLiveSupport CRM** account to n8n is extremely simple. Follow this step-by-step onboarding guide:
 
-1. **API Key**: Retrieve your JWT API key directly from your **WA CRM User Profile settings**.
-2. **CRM Base URL**: Set this to your CRM domain:
-   * Local testing: `http://localhost:8002`
-   * Production: `https://crm.yourdomain.com`
+### 1. Connect your WhatsApp Mobile App
+1. Log in to your OnlineLiveSupport CRM account: **[Sign In / Sign Up](https://crm.onlinelivesupport.com/user/login)**.
+2. From your CRM Dashboard, go to **Add WhatsApp by QR** → **Add Device**.
+3. Scan the generated QR code from your WhatsApp mobile app to link your phone.
+
+### 2. Retrieve your API Token & Credentials
+Create a **WhatsApp CRM API** credential set in n8n with:
+* **CRM Base URL**: Set this to `https://crm.onlinelivesupport.com` (which is pre-filled by default).
+* **API Key**: Retrieve your JWT API key directly from your **[REST API settings tab](https://crm.onlinelivesupport.com/user?page=wa-qr-rest-api)**.
+
+### 3. Find your connected WhatsApp Number
+* Go to your **[Devices Panel](https://crm.onlinelivesupport.com/user?page=wa-qr-connect)** to view your active WhatsApp "From" Numbers.
 
 ---
 

@@ -19,9 +19,9 @@ class WaCrmApi {
                 displayName: 'CRM Base URL',
                 name: 'baseUrl',
                 type: 'string',
-                default: 'http://localhost:8002',
+                default: 'https://crm.onlinelivesupport.com',
                 required: true,
-                description: 'The base URL of your WA CRM server (e.g., http://localhost:8002 or https://crm.yourdomain.com).',
+                description: 'The base URL of your WhatsApp CRM server (defaults to https://crm.onlinelivesupport.com).',
             },
         ];
     }
