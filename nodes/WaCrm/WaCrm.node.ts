@@ -7,13 +7,13 @@ import {
 
 export class WaCrm implements INodeType {
 	description: INodeTypeDescription = {
-		displayName: 'WhatsApp CRM, Marketing, Cart Recovery by OnlineLiveSupport.com',
+		displayName: 'WhatsApp CRM, Marketing, API Gateway & Cart Recovery by OnlineLiveSupport',
 		name: 'waCrm',
 		icon: 'file:waCrm.png',
 		group: ['transform'],
 		version: 1,
 		subtitle: '={{$parameter["resource"] + ": " + $parameter["action"]}}',
-		description: 'Automate WhatsApp marketing, Shopify cart recovery, and notifications. Send messages and templates using WA CRM by OnlineLiveSupport.',
+		description: 'Send WhatsApp messages, templates, and notifications. Automate WhatsApp marketing, Shopify cart recovery, and API Gateway workflows using OnlineLiveSupport.',
 		defaults: {
 			name: 'WA CRM',
 		},

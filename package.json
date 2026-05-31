@@ -1,7 +1,7 @@
 {
   "name": "n8n-nodes-whatsapp-crm-marketing",
-  "version": "1.0.2",
-  "description": "n8n integration node for WhatsApp CRM, Marketing, Cart Recovery by OnlineLiveSupport.com",
+  "version": "1.0.3",
+  "description": "n8n integration node for WhatsApp CRM, Marketing, API Gateway, and Cart Recovery by OnlineLiveSupport.com",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
@@ -10,7 +10,13 @@
     "prepublishOnly": "npm run build"
   },
   "keywords": [
-    "n8n-community-node-package"
+    "n8n-community-node-package",
+    "whatsapp-api",
+    "whatsapp-gateway",
+    "send-whatsapp-message",
+    "whatsapp-integration",
+    "cart-recovery",
+    "abandoned-cart"
   ],
   "author": "OnlineLiveSupport.com",
   "license": "MIT",
