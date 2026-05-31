@@ -1,12 +1,12 @@
-# WhatsApp CRM, Marketing, Cart Recovery by OnlineLiveSupport for n8n
+# WhatsApp CRM, Marketing, API Gateway & Cart Recovery by OnlineLiveSupport for n8n
 
 <p align="center">
   <img src="nodes/WaCrm/waCrm.png" alt="WhatsApp CRM Logo" width="128" height="128" />
 </p>
 
-A premium, robust **n8n Community Node** that integrates the **WhatsApp CRM, Marketing, Cart Recovery** platform by **OnlineLiveSupport.com** directly into your n8n automation workflows. 
+A premium, robust **n8n Community Node** that integrates the **WhatsApp CRM, Marketing, API Gateway, and Cart Recovery** platform by **OnlineLiveSupport.com** directly into your n8n automation workflows. 
 
-With this node, you can automate customer notifications, recover abandoned Shopify carts, run targeted marketing campaigns, and handle template messages programmatically.
+With this node, you can send WhatsApp messages via API, automate customer notifications, recover abandoned Shopify carts, run targeted marketing campaigns, and handle template messages programmatically.
 
 ---
 
