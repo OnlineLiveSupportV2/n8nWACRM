@@ -14,7 +14,7 @@ export class WaCrmApi implements ICredentialType {
 			typeOptions: { password: true },
 			default: '',
 			required: true,
-			description: 'The API key (JWT token) generated in your WA CRM profile settings.',
+			description: 'Your OnlineLiveSupport REST API Token. Copy it from your CRM panel at Add WhatsApp by QR → Rest API (https://crm.onlinelivesupport.com/user?page=wa-qr-rest-api). Contact support if you face issues (https://onlinelivesupport.com/contact).',
 		},
 		{
 			displayName: 'CRM Base URL',
