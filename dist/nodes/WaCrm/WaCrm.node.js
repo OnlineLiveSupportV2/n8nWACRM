@@ -390,7 +390,10 @@ class WaCrm {
                 {
                     displayName: 'Template Name',
                     name: 'templetName',
-                    type: 'string',
+                    type: 'options',
+                    typeOptions: {
+                        loadOptionsMethod: 'getTemplates',
+                    },
                     displayOptions: {
                         show: {
                             connectionType: ['metaApi'],
@@ -400,8 +403,7 @@ class WaCrm {
                     },
                     default: '',
                     required: true,
-                    placeholder: 'welcome_message',
-                    description: 'The exact name of the WhatsApp template created in Meta/CRM.',
+                    description: 'The WhatsApp template to send (dynamically loaded from your account).',
                 },
                 {
                     displayName: 'Template Parameters',
@@ -450,6 +452,38 @@ class WaCrm {
                     description: 'Whether to save logs of this template execution inside WA CRM.',
                 },
             ],
+        };
+        this.methods = {
+            loadOptions: {
+                async getTemplates() {
+                    try {
+                        const credentials = await this.getCredentials('waCrmApi');
+                        const apiKey = credentials.apiKey;
+                        const baseUrl = (credentials.baseUrl || 'https://crm.onlinelivesupport.com').replace(/\/$/, '');
+                        const response = await this.helpers.request({
+                            method: 'GET',
+                            url: `${baseUrl}/api/user/get_my_meta_templets`,
+                            headers: {
+                                Authorization: `Bearer ${apiKey}`,
+                            },
+                            json: true,
+                        });
+                        const templates = response.data || [];
+                        return templates.map((t) => ({
+                            name: `${t.name} (${t.language})`,
+                            value: t.name,
+                        }));
+                    }
+                    catch (error) {
+                        return [
+                            {
+                                name: 'Failed to load templates (check API Key / Meta Connection)',
+                                value: '',
+                            },
+                        ];
+                    }
+                },
+            },
         };
     }
     async execute() {

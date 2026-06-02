@@ -1,6 +1,8 @@
 import {
 	IExecuteFunctions,
+	ILoadOptionsFunctions,
 	INodeExecutionData,
+	INodePropertyOptions,
 	INodeType,
 	INodeTypeDescription,
 } from 'n8n-workflow';
@@ -402,7 +404,10 @@ export class WaCrm implements INodeType {
 			{
 				displayName: 'Template Name',
 				name: 'templetName',
-				type: 'string',
+				type: 'options',
+				typeOptions: {
+					loadOptionsMethod: 'getTemplates',
+				},
 				displayOptions: {
 					show: {
 						connectionType: ['metaApi'],
@@ -412,8 +417,7 @@ export class WaCrm implements INodeType {
 				},
 				default: '',
 				required: true,
-				placeholder: 'welcome_message',
-				description: 'The exact name of the WhatsApp template created in Meta/CRM.',
+				description: 'The WhatsApp template to send (dynamically loaded from your account).',
 			},
 			{
 				displayName: 'Template Parameters',
@@ -462,6 +466,40 @@ export class WaCrm implements INodeType {
 				description: 'Whether to save logs of this template execution inside WA CRM.',
 			},
 		],
+	};
+
+	methods = {
+		loadOptions: {
+			async getTemplates(this: ILoadOptionsFunctions): Promise<INodePropertyOptions[]> {
+				try {
+					const credentials = await this.getCredentials('waCrmApi');
+					const apiKey = credentials.apiKey as string;
+					const baseUrl = (credentials.baseUrl as string || 'https://crm.onlinelivesupport.com').replace(/\/$/, '');
+
+					const response = await this.helpers.request({
+						method: 'GET',
+						url: `${baseUrl}/api/user/get_my_meta_templets`,
+						headers: {
+							Authorization: `Bearer ${apiKey}`,
+						},
+						json: true,
+					});
+
+					const templates = response.data || [];
+					return templates.map((t: any) => ({
+						name: `${t.name} (${t.language})`,
+						value: t.name,
+					}));
+				} catch (error) {
+					return [
+						{
+							name: 'Failed to load templates (check API Key / Meta Connection)',
+							value: '',
+						},
+					];
+				}
+			},
+		},
 	};
 
 	async execute(this: IExecuteFunctions): Promise<INodeExecutionData[][]> {
