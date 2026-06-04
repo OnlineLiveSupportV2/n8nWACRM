@@ -20,6 +20,10 @@
   ],
   "author": "OnlineLiveSupport.com",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OnlineLiveSupportV2/n8nWACRM.git"
+  },
   "devDependencies": {
     "copyfiles": "^2.4.1",
     "n8n-workflow": "^1.0.0",
