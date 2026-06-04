@@ -6,7 +6,7 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsc && npm run copy-assets",
-    "copy-assets": "copyfiles -u 1 nodes/**/*.png nodes/**/*.svg dist/",
+    "copy-assets": "copyfiles \"nodes/**/*.png\" \"nodes/**/*.svg\" dist/",
     "prepublishOnly": "npm run build"
   },
   "keywords": [
