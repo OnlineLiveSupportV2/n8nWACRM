@@ -243,7 +243,6 @@ export class WaCrm implements INodeType {
 		const returnData: INodeExecutionData[] = [];
 
 		const credentials = await this.getCredentials('waCrmApi');
-		const apiKey = credentials.apiKey as string;
 		const baseUrl = (credentials.baseUrl as string || 'https://crm.onlinelivesupport.com').replace(/\/$/, '');
 
 		for (let i = 0; i < items.length; i++) {
@@ -256,7 +255,6 @@ export class WaCrm implements INodeType {
 					const messageType = this.getNodeParameter('messageType', i) as string;
 
 					const body: Record<string, unknown> = {
-						token: apiKey,
 						requestType: 'POST',
 						messageType,
 						from: from.replace('+', '').trim(),
@@ -282,7 +280,7 @@ export class WaCrm implements INodeType {
 						body.title = this.getNodeParameter('title', i) as string;
 					}
 
-					const response = await this.helpers.httpRequest({
+					const response = await this.helpers.httpRequestWithAuthentication.call(this, 'waCrmApi', {
 						method: 'POST',
 						url: `${baseUrl}/api/qr/rest/send_message`,
 						body,

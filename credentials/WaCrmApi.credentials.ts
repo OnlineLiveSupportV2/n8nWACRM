@@ -1,4 +1,5 @@
 import {
+	IAuthenticateGeneric,
 	ICredentialTestRequest,
 	ICredentialType,
 	INodeProperties,
@@ -26,6 +27,15 @@ export class WaCrmApi implements ICredentialType {
 			description: 'The base URL of your WhatsApp CRM server (defaults to https://crm.onlinelivesupport.com).',
 		},
 	];
+
+	authenticate: IAuthenticateGeneric = {
+		type: 'generic',
+		properties: {
+			body: {
+				token: '={{$credentials.apiKey}}',
+			},
+		},
+	};
 
 	test: ICredentialTestRequest = {
 		request: {
