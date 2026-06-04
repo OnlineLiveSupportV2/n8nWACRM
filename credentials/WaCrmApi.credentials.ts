@@ -1,4 +1,5 @@
 import {
+	ICredentialTestRequest,
 	ICredentialType,
 	INodeProperties,
 } from 'n8n-workflow';
@@ -25,4 +26,17 @@ export class WaCrmApi implements ICredentialType {
 			description: 'The base URL of your WhatsApp CRM server (defaults to https://crm.onlinelivesupport.com).',
 		},
 	];
+
+	test: ICredentialTestRequest = {
+		request: {
+			baseURL: '={{$credentials.baseUrl}}',
+			url: '/api/qr/rest/devices',
+			method: 'POST',
+			body: {
+				token: '={{$credentials.apiKey}}',
+				requestType: 'GET',
+			},
+			json: true,
+		},
+	};
 }

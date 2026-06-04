@@ -282,7 +282,7 @@ export class WaCrm implements INodeType {
 						body.title = this.getNodeParameter('title', i) as string;
 					}
 
-					const response = await this.helpers.request({
+					const response = await this.helpers.httpRequest({
 						method: 'POST',
 						url: `${baseUrl}/api/qr/rest/send_message`,
 						body,
