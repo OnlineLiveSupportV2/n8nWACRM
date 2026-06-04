@@ -1,7 +1,7 @@
 # WhatsApp CRM, Marketing, API Gateway & Cart Recovery by OnlineLiveSupport for n8n
 
 <p align="center">
-  <img src="nodes/WaCrm/waCrm.png" alt="WhatsApp CRM Logo" width="128" height="128" />
+  <img src="https://www.onlinelivesupport.com/assets/images/logo.png" alt="OnlineLiveSupport WhatsApp CRM Logo" width="200" />
 </p>
 
 A premium, robust **n8n Community Node** that integrates the **WhatsApp CRM, Marketing, API Gateway, and Cart Recovery** platform by **[OnlineLiveSupport.com](https://onlinelivesupport.com)** directly into your n8n automation workflows.
