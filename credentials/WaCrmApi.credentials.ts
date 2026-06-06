@@ -7,7 +7,7 @@ import {
 
 export class WaCrmApi implements ICredentialType {
 	name = 'waCrmApi';
-	displayName = 'WhatsApp CRM API';
+	displayName = 'OnlineLiveSupport WhatsApp QR API';
 	properties: INodeProperties[] = [
 		{
 			displayName: 'API Key',
