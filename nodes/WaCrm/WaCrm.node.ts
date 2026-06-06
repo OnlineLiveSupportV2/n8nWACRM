@@ -10,7 +10,7 @@ export class WaCrm implements INodeType {
 		displayName: 'WhatsApp via QR (OnlineLiveSupport)',
 		name: 'waCrm',
 		icon: 'file:waCrm.png',
-		group: ['communication'],
+		group: ['transform'],
 		version: 1,
 		subtitle: '={{$parameter["action"]}}',
 		description: 'Send WhatsApp messages using a QR-connected WhatsApp account via OnlineLiveSupport CRM. Unlike the official WhatsApp Business API, this node works with any regular WhatsApp number — no Meta Business Account, no template approval, and no phone number verification required. Simply scan a QR code in your OnlineLiveSupport dashboard to connect your WhatsApp number and start sending messages instantly.',
