@@ -1,6 +1,6 @@
 {
   "name": "n8n-nodes-whatsapp-crm-marketing",
-  "version": "1.4.7",
+  "version": "1.4.8",
   "description": "n8n integration node for WhatsApp CRM, Marketing, API Gateway, and Cart Recovery by OnlineLiveSupport.com",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -23,6 +23,10 @@
     "email": "contact@onlinelivesupport.com"
   },
   "license": "MIT",
+  "homepage": "https://github.com/OnlineLiveSupportV2/n8nWACRM#readme",
+  "files": [
+    "dist"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/OnlineLiveSupportV2/n8nWACRM.git"
